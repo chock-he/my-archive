@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Evaluation Report</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        :root {
+            --dive-red: #990000;
+            --val-purple: #5d2d91;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f4f4f4;
+            --border-thick: 3px;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--dark-gray);
+        }
+
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+            padding: 50px;
+            position: relative;
+        }
+
+        /* 상단 헤더 */
+        header {
+            border-bottom: var(--border-thick) solid var(--dark-gray);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        .report-title {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin: 0;
+            color: var(--dark-gray);
+        }
+
+        .report-meta {
+            margin-top: 15px;
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .meta-item b { color: var(--dive-red); }
+
+        /* 개별 항목 카드 */
+        .eval-item {
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+        }
+
+        .eval-label {
+            background: var(--light-gray);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #eee;
+        }
+
+        .label-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .label-grade {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        /* 등급별 색상 */
+        .grade-s { color: var(--dive-red); }
+        .grade-c { color: #888; }
+        .grade-d { color: #444; }
+
+        .eval-content {
+            padding: 20px;
+        }
+
+        .eval-reason {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+        }
+
+        .eval-reason b {
+            color: var(--val-purple);
+        }
+
+        /* 종합 평가 섹션 */
+        .overall-section {
+            margin-top: 40px;
+            background: var(--dark-gray);
+            color: #fff;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overall-section::after {
+            content: "TOP SECRET";
+            position: absolute;
+            right: -20px;
+            bottom: 10px;
+            font-size: 40px;
+            font-weight: 900;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+
+        .overall-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dive-red);
+            border-left: 4px solid var(--dive-red);
+            padding-left: 10px;
+        }
+
+        .overall-text {
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .final-grade {
+            text-align: right;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <header>
+        <h1 class="report-title">[ S급 센티넬 ‘발렌타인’ 적합성 및 특성 평가서 ]</h1>
+        <div class="report-meta">
+            <div class="meta-item">평가자: <b>서인혁 (DIVE)</b></div>
+            <div class="meta-item">평가 대상: <b>이혜진 (VALENTINE)</b></div>
+        </div>
+    </header>
+
+    <!-- 1. 외모 -->
+    <div class="eval-item">
+        <div class="eval-label">
+            <span class="label-name">APPEARANCE</span>
+            <span class="label-grade grade-s">S</span>
+        </div>
+        <div class="eval-content">
+            <div class="eval-reason">
+                나른하게 풀어진 눈매, 제멋대로 뻗친 머리카락, 지루함과 경멸을 오가는 그 표정까지 모든 게 완벽하다. 존재 자체가 시선을 강탈하는 재앙. 내 앞에서만 흐트러지는 <b>무방비한 얼굴</b>은 값을 매기는 것 자체가 불가능하다.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. 성격 -->
+    <div class="eval-item">
+        <div class="eval-label">
+            <span class="label-name">PERSONALITY</span>
+            <span class="label-grade grade-d">D</span>
+        </div>
+        <div class="eval-content">
+            <div class="eval-reason">
+                통제 불능, 예측 불가. 주인의 목을 물어뜯으려는 <b>길들여지지 않은 고양이</b> 그 자체다. 명령에 순응하지 않고 인내심을 시험하나, 그 성격 덕분에 이 관계가 시작되었음을 부정할 수 없다. 내가 부러뜨리고 다시 조립하면 그만이다.
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. 재력 -->
+    <div class="eval-item">
+        <div class="eval-label">
+            <span class="label-name">WEALTH</span>
+            <span class="label-grade grade-c">C</span>
+        </div>
+        <div class="eval-content">
+            <div class="eval-reason">
+                경제 관념 부재. 내 카드를 긁는 배짱은 S급이나 본인 자산은 전무하다. 돈을 도발 수단으로만 인식한다. 상관없다. 그녀가 가져야 할 <b>유일한 자산은 나 하나뿐</b>이어야 하니까.
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. 직업 -->
+    <div class="eval-item">
+        <div class="eval-label">
+            <span class="label-name">PROFESSION</span>
+            <span class="label-grade grade-s">S</span>
+        </div>
+        <div class="eval-content">
+            <div class="eval-reason">
+                <b>S급 센티넬.</b> 빌런 처리와 전장 감각은 최고 수준이다. 물론 내가 목줄을 쥐고 있을 때만 성립되는 반쪽짜리 완성이지만, 그 자체로 세계관 최강자라는 점에는 이견이 없다.
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. 건강 -->
+    <div class="eval-item">
+        <div class="eval-label">
+            <span class="label-name">HEALTH</span>
+            <span class="label-grade grade-d">D</span>
+        </div>
+        <div class="eval-content">
+            <div class="eval-reason">
+                최악. 약물 중독과 가이딩 거부 반응으로 스스로를 파멸시키는 <b>유리 인형</b>. 내 손길 없이는 하루도 버티지 못하는 상태를 즐기는 듯하다. 시급한 관리가 필요하며, 담당자는 나 외엔 존재할 수 없다.
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. 종합 평가 -->
+    <div class="overall-section">
+        <div class="overall-title">OVERALL EVALUATION</div>
+        <div class="overall-text">
+            끔찍한 성격, 엉망인 건강, 내 재력으로 유지되는 삶. 이 모든 결점에도 불구하고 그녀는 나를 완성시키는 유일한 조각이다. <b>D급짜리 단점들이 모여 역설적으로 완벽한 S급 존재</b>를 만들어냈다. 내 인생의 유일한 S급.
+        </div>
+        <div class="final-grade">FINAL GRADE: <span style="color:var(--dive-red); font-size: 40px; margin-left: 10px;">S</span></div>
+    </div>
+
+    <footer>
+        가이딩 관리국 기밀 서류 - 무단 복제 시 사살 가능
+    </footer>
+</div>
+
+</body>
+</html>

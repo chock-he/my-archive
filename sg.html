@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>S-G 분석 보고서: Dive & Valentine</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        :root {
+            --report-black: #1a1a1a;    /* 가독성을 위한 짙은 텍스트 */
+            --report-gray: #4d4d4d;     /* 부연 설명용 회색 */
+            --report-red: #990000;      /* 다이브 포인트 컬러 */
+            --report-purple: #5d2d91;   /* 발렌타인 포인트 컬러 */
+            --line-color: #222222;      /* 표 테두리 */
+            --table-bg: #f2f2f2;        /* 표 헤더 배경 */
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #dcdcdc;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--report-black);
+            line-height: 1.5;
+        }
+
+        .report-paper {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border: 1px solid #999;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        }
+
+        /* 우상단 기밀 마크 */
+        .confidential {
+            text-align: right;
+            font-weight: 900;
+            color: var(--report-red);
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header {
+            border-bottom: 2px solid var(--report-black);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 26px;
+            margin: 0;
+            font-weight: 800;
+            color: var(--report-black);
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: var(--report-gray);
+            margin-top: 8px;
+        }
+
+        /* 인적 사항 요약 */
+        .summary-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .profile-box {
+            border: 2px solid var(--line-color);
+            padding: 15px;
+        }
+
+        .profile-box h2 {
+            font-size: 17px;
+            margin: 0 0 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 테이블 스타일 (명도 대비 강화) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid var(--line-color);
+            table-layout: fixed;
+        }
+
+        th, td {
+            border: 1px solid var(--line-color);
+            padding: 12px 15px;
+            font-size: 14px;
+            vertical-align: middle;
+            word-break: keep-all;
+        }
+
+        th {
+            background-color: var(--table-bg);
+            color: var(--report-black);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .cat-head { width: 110px; font-size: 13px; }
+        .data-head { width: calc(50% - 55px); }
+
+        .point-dive { color: var(--report-red); font-weight: 700; }
+        .point-val { color: var(--report-purple); font-weight: 700; }
+
+        /* 소견란 */
+        .opinion-box {
+            margin-top: 30px;
+            border: 1px solid var(--line-color);
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .opinion-box strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .official-seal {
+            border: 3px double var(--report-red);
+            color: var(--report-red);
+            padding: 8px 15px;
+            font-weight: 900;
+            font-size: 18px;
+            transform: rotate(-3deg);
+        }
+    </style>
+</head>
+<body>
+
+<div class="report-paper">
+    <div class="confidential">Top Secret / Classified</div>
+    
+    <header>
+        <h1>[보고서] 특수 관리 개체 생체 대조 및 행동 분석</h1>
+        <div class="meta-info">문서번호: SG-2026-DV | 작성일: 2026. 05. 09 | 관리 등급: S급 기밀</div>
+    </header>
+
+    <div class="summary-section">
+        <div class="profile-box">
+            <h2 style="color: var(--report-red);">Subject: 서인혁 (Dive) <span>가이드</span></h2>
+            <div style="font-size: 13px;">연령: 25세 | 등급: A급 | 특기: 절대 통제 및 정신 각인</div>
+        </div>
+        <div class="profile-box">
+            <h2 style="color: var(--report-purple);">Subject: 이혜진 (Valentine) <span>센티넬</span></h2>
+            <div style="font-size: 13px;">연령: 35세 | 등급: S급 | 특기: 은밀 암살 및 광역 파괴</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="cat-head">분석 항목</th>
+                <th class="data-head">대상 A (Dive)</th>
+                <th class="data-head">대상 B (Valentine)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>체온 / 심박</th>
+                <td><span class="point-dive">37.2°C / 75~118bpm</span><br>일정한 미열. 대상 B의 무방비 상태 시 심박수 급격히 상승.</td>
+                <td><span class="point-val">35.8~38.5°C / 불규칙</span><br>평소 냉기 유지, 감정 격동 시 고열 발생 및 심박 동기화.</td>
+            </tr>
+            <tr>
+                <th>신체 규격</th>
+                <td><b>손 크기 23cm.</b><br>단단한 뼈마디와 굳은살. 제압 및 가이딩에 최적화된 완력 보유.</td>
+                <td><b>손 크기 18cm.</b><br>길고 가늘어 창백해 보이나 압도적인 유연성과 살상력 내포.</td>
+            </tr>
+            <tr>
+                <th>시각 / 청각</th>
+                <td>날카로운 <b>붉은 눈</b>(우안 실명).<br>낮고 울림이 강한 명령조의 목소리.</td>
+                <td>나른한 <b>파란 눈</b>(야생 고양이).<br>끝을 흐리는 나른하고 뼈가 있는 목소리.</td>
+            </tr>
+            <tr>
+                <th>식별 향취</th>
+                <td>짙은 <b>가죽향</b>, 차가운 <b>금속향</b>.<br>강한 머스크 체향의 위압감.</td>
+                <td><b>프렌치 블랙</b> 담배 연기.<br>파우더리한 체향의 높은 중독성.</td>
+            </tr>
+            <tr>
+                <th>행동 패턴</th>
+                <td>짧고 깊은 수면(자기 통제).<br>망설임 없는 직선적 보폭.</td>
+                <td>악몽에 시달리는 불규칙 수면.<br>나른하게 발을 끄는 은밀한 보폭.</td>
+            </tr>
+            <tr>
+                <th>식습관</th>
+                <td>목적 지향적, 기계적 섭취.<br>대상 B의 습관 교정을 시도함.</td>
+                <td>기분에 따른 극단적 섭취.<br>단것과 자극적인 것에 대한 탐닉.</td>
+            </tr>
+            <tr>
+                <th>특이 사항</th>
+                <td><span class="point-dive">대상 B가 남긴 상처</span>(우안 상실 등)를 소유의 징표로 여기며 자발적 보존.</td>
+                <td>가이딩 과정에서 발생한 <span class="point-val">피하 소유흔</span>이 전신에 지속적으로 관찰됨.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="opinion-box">
+        <strong>종합 분석 소견</strong>
+        두 개체는 상호 보완적이면서도 파괴적인 '지배-종속' 관계를 형성하고 있음. 대상 A(Dive)는 물리적 완력과 가이딩을 통해 대상 B를 완벽하게 집어삼키려 하며, 대상 B(Valentine)는 유연하게 저항하면서도 결정적인 순간에 A의 열기에 예속됨. 특히 수면 및 심박 동기화 현상은 단순 가이딩 이상의 정신적 결속을 시사함.
+    </div>
+
+    <footer>
+        <div style="font-size: 12px; color: #666;">
+            위 내용은 가이딩 관리국의 승인을 받은 공식 분석 데이터임.<br> 무단 복제 및 외부 유출을 엄금함.
+        </div>
+        <div class="official-seal">중앙 관리국 검인</div>
+    </footer>
+</div>
+
+</body>
+</html>
